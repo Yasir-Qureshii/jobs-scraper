@@ -1,0 +1,29 @@
+body {
+    background-color: #f8f9fa;
+    margin-bottom: 0;
+}
+
+#scraperForm {
+    max-width: 450px;
+    margin: 20px auto;
+}
+
+#loginForm {
+    max-width: 350px;
+    margin: auto;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* prevent horizontal scroll */
+}
+
+
+.form-label {
+    font-weight: 500;
+    /* This is a semi-bold value */
+}
