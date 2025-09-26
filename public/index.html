@@ -25,11 +25,11 @@
             <h4 class="mb-3 text-center">Login</h4>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" required value="alice@example.com">
+                <input type="email" class="form-control" id="email" required>
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" required value="passAlice">
+                <input type="password" class="form-control" id="password" required >
             </div>
             <button type="submit" class="btn btn-primary w-100">Login</button>
             <p class="text-danger mt-2" id="errorMsg"></p>
@@ -38,20 +38,22 @@
 
     <!-- Scraper Form -->
     <div class="d-none container" id="scraperSection">
-        <form id="scraperForm" class="p-3 mt-3 border rounded bg-light shadow" style="max-width:800px; margin:auto; font-size:14px;">
+        <form id="scraperForm" class="p-3 mt-3 border rounded bg-light shadow"
+            style="max-width:800px; margin:auto; font-size:14px;">
             <div class="row">
                 <div class="col-md-4 mb-2">
-                    <label class="form-label"><span class="font-weight-bolder">Job Title</span> <span class="text-danger">*</span></label>
+                    <label class="form-label"><span class="font-weight-bolder">Job Title</span> <span
+                            class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="title" required>
                 </div>
                 <div class="col-md-4 mb-2">
                     <label class="form-label">Location <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="location" value="United States" required>
+                    <input type="text" class="form-control" id="location" required>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="publishedAt" class="form-label">Date Posted</label>
                     <select id="publishedAt" class="form-select">
-                        <option value="">-- Select --</option>
+                        <option value="">All</option>
                         <option value="r86400">Past 24 hours</option>
                         <option value="r604800">Past week</option>
                         <option value="r2592000">Past month</option>
@@ -63,7 +65,7 @@
                 <div class="col-md-4 mb-3">
                     <label for="workType" class="form-label">Working Model</label>
                     <select id="workType" class="form-select">
-                        <option value="">-- Select --</option>
+                        <option value="">All</option>
                         <option value="1">On-site</option>
                         <option value="2">Remote</option>
                         <option value="3">Hybrid</option>
@@ -72,7 +74,7 @@
                 <div class="col-md-4 mb-3">
                     <label for="contractType" class="form-label">Contract Type</label>
                     <select id="contractType" class="form-select">
-                        <option value="">-- Select --</option>
+                        <option value="">All</option>
                         <option value="F">Full-time</option>
                         <option value="P">Part-time</option>
                         <option value="C">Contract</option>
@@ -84,7 +86,7 @@
                 <div class="col-md-4 mb-3">
                     <label for="experienceLevel" class="form-label">Experience Level</label>
                     <select id="experienceLevel" class="form-select">
-                        <option value="">-- Select --</option>
+                        <option value="">All</option>
                         <option value="1">Internship</option>
                         <option value="2">Entry level</option>
                         <option value="3">Associate</option>
@@ -96,16 +98,14 @@
 
             <div class="row">
                 <div class="col-md-4 mb-2">
-                    <label class="form-label">Jobs to Scrape <span class="text-danger">*</span></label>
-                    <input type="number" class="form-control" id="rows" value="50" required>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <label class="form-label">Target Score <span class="text-danger">*</span></label>
+                    <label class="form-label">Target Relevancy Score(out of 100) <span class="text-danger">*</span></label>
                     <input type="number" class="form-control" id="targetScore" value="85" required>
                 </div>
-                <div class="col-md-4 mb-3">
+                <div class="col-md-8 mb-3">
                     <label for="targetSheetLink" class="form-label">Target Sheet Link *</label>
-                    <input type="text" class="form-control" id="targetSheetLink" required placeholder="https://docs.google.com/spreadsheets/d/">
+                    <input
+                        type="text" class="form-control" id="targetSheetLink" required
+                        placeholder="https://docs.google.com/spreadsheets/d/">
                     <div id="targetSheetError" class="text-danger mt-1 d-none">❌ Not a valid Google Sheet link.</div>
                 </div>
             </div>
@@ -113,11 +113,11 @@
             <div class="row">
                 <div class="col-md-6 mb-2">
                     <label class="form-label">Resume Summary <span class="text-danger">*</span></label>
-                    <textarea class="form-control" id="resumeSummary" rows="3" required></textarea>
+                    <textarea class="form-control" id="resumeSummary" rows="3"></textarea>
                 </div>
                 <div class="col-md-6 mb-2">
                     <label class="form-label">Preferences <span class="text-danger">*</span></label>
-                    <textarea class="form-control" id="preferences" rows="3" required></textarea>
+                    <textarea class="form-control" id="preferences" rows="3"></textarea>
                 </div>
             </div>
 
@@ -129,158 +129,53 @@
                     </div>
                 </div>
                 <div class="col-md-8" id="coverLetterDriveContainer" style="display: none;">
-                    <input type="text" class="form-control" id="coverLetterDriveInput" placeholder="Link for Cover Letters Drive Folder">
-                    <div class="text-danger mt-1" id="coverLetterDriveError" style="display:none;">❌ Not a valid Google Drive folder link.</div>
+                    <input type="text" class="form-control" id="coverLetterDriveInput"
+                        placeholder="Link for Cover Letters Drive Folder">
+                    <div class="text-danger mt-1" id="coverLetterDriveError" style="display:none;">❌ Not a valid Google
+                        Drive folder link.</div>
                 </div>
             </div>
 
             <div class="text-center">
-                <button type="submit" class="btn btn-success w-25 mt-2">Fetch Jobs</button>
+                <button type="submit" class="btn btn-success w-25 mt-2" id="submitBtn">
+                    <span id="submitText">Fetch Jobs</span>
+                    <span id="submitSpinner" class="spinner d-none ms-2"></span>
+                </button>
             </div>
         </form>
     </div>
 
-    <!-- Toast -->
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-        <div id="toastMsg" class="toast text-bg-success" role="alert">
-            <div class="toast-body">Request submitted. Jobs will be added to your tracking sheet.</div>
+    <!-- Progress Modal -->
+    <div id="progressOverlay" class="progress-overlay d-none">
+        <div class="progress-modal">
+            <button class="close-button" id="closeProgress" style="display: none;">
+                <b>&times;</b>
+            </button>
+            <div class="progress-header">
+                <h4 id="progressTitle">🔄 Processing Your Request</h4>
+                <div class="progress-percentage" id="progressPercentage">0%</div>
+                <div class="progress-bar-container">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
+            </div>
+            <div id="progressLog" class="progress-log">
+                <div class="progress-entry status-running">
+                    <div class="progress-icon">
+                        <div class="spinner"></div>
+                    </div>
+                    <div class="progress-content">
+                        <div class="progress-step">Searching Jobs</div>
+                        <div class="progress-message"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
+
     <!-- Scripts -->
-    <script>
-        const loginForm = document.getElementById("loginForm");
-        const loginSection = document.getElementById("loginSection");
-        const scraperSection = document.getElementById("scraperSection");
-        const userStatus = document.getElementById("userStatus");
-        const logoutBtn = document.getElementById("logoutBtn");
-        const errorMsg = document.getElementById("errorMsg");
-
-        function showScraper(email) {
-            loginSection.classList.add("d-none");
-            scraperSection.classList.remove("d-none");
-            userStatus.innerText = `${email} — Logged in`;
-            logoutBtn.classList.remove("d-none");
-        }
-
-        function showLogin() {
-            loginSection.classList.remove("d-none");
-            scraperSection.classList.add("d-none");
-            userStatus.innerText = "Not logged in";
-            logoutBtn.classList.add("d-none");
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const savedUser = localStorage.getItem("loggedInUser");
-            if (savedUser) showScraper(savedUser);
-            else showLogin();
-        });
-
-        loginForm.addEventListener("submit", async (e) => {
-            e.preventDefault();
-            const email = document.getElementById("email").value.trim();
-            const password = document.getElementById("password").value.trim();
-
-            try {
-                const res = await fetch("/login", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ email, password }),
-                });
-                const data = await res.json();
-                if (res.ok && data.success) {
-                    localStorage.setItem("loggedInUser", data.email);
-                    showScraper(data.email);
-                } else {
-                    errorMsg.innerText = data.message || "Login failed";
-                }
-            } catch (err) {
-                console.error(err);
-                errorMsg.innerText = "⚠️ Server error, please try again.";
-            }
-        });
-
-        logoutBtn.addEventListener("click", () => {
-            localStorage.removeItem("loggedInUser");
-            showLogin();
-        });
-
-        // Cover letter toggle
-        const coverCheckbox = document.getElementById("coverLetterCheckbox");
-        const coverInput = document.getElementById("coverLetterDriveInput");
-        const coverContainer = document.getElementById("coverLetterDriveContainer");
-        const coverError = document.getElementById("coverLetterDriveError");
-        const targetSheetInput = document.getElementById("targetSheetLink");
-        const targetSheetError = document.getElementById("targetSheetError");
-        const scraperFormElement = document.getElementById("scraperForm");
-
-        coverCheckbox.addEventListener("change", () => {
-            if (coverCheckbox.checked) {
-                coverContainer.style.display = "block";
-                coverInput.setAttribute("required", "true");
-            } else {
-                coverContainer.style.display = "none";
-                coverInput.removeAttribute("required");
-                coverInput.value = "";
-                coverError.style.display = "none";
-            }
-        });
-
-        scraperFormElement.addEventListener("submit", async (e) => {
-            e.preventDefault();
-            let hasError = false;
-
-            if (coverCheckbox.checked) {
-                const link = coverInput.value.trim();
-                if (!link.startsWith("https://drive.google.com/drive/folders/")) {
-                    coverError.style.display = "block";
-                    hasError = true;
-                } else coverError.style.display = "none";
-            }
-
-            const targetLink = targetSheetInput.value.trim();
-            if (!targetLink.startsWith("https://docs.google.com/spreadsheets/d/")) {
-                targetSheetError.classList.remove("d-none");
-                hasError = true;
-            } else targetSheetError.classList.add("d-none");
-
-            if (hasError) return;
-
-            const payload = {
-                title: document.getElementById("title").value.trim(),
-                location: document.getElementById("location").value.trim(),
-                contractType: [document.getElementById("contractType").value].filter(Boolean),
-                experienceLevel: [document.getElementById("experienceLevel").value].filter(Boolean),
-                workType: [document.getElementById("workType").value].filter(Boolean),
-                publishedAt: document.getElementById("publishedAt").value || "",
-                rows: parseInt(document.getElementById("rows").value) || 50,
-                targetScore: parseInt(document.getElementById("targetScore").value) || 85,
-                coverLetter: coverCheckbox.checked,
-                coverLetterDrive: coverInput.value.trim(),
-                resumeSummary: document.getElementById("resumeSummary").value.trim(),
-                preferences: document.getElementById("preferences").value.trim(),
-                targetSheetLink: targetSheetInput.value.trim()
-            };
-
-            try {
-                const response = await fetch(
-                    "https://yasirqr26.app.n8n.cloud/webhook/a8edd952-8d54-4862-bd1b-44c5168c919a",
-                    {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify(payload)
-                    }
-                );
-
-                if (response.ok) alert("✅ Request submitted. Jobs will be added to your tracking sheet.");
-                else alert("❌ Failed to submit. Please try again.");
-            } catch (err) {
-                console.error(err);
-                alert("⚠️ Error connecting to server.");
-            }
-        });
-    </script>
-
+    <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

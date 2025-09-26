@@ -27,3 +27,207 @@ body {
     font-weight: 500;
     /* This is a semi-bold value */
 }
+
+/* Progress Modal Styles */
+.progress-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    overflow-y: auto;
+}
+
+.progress-modal {
+    position: relative;
+    background: white;
+    padding: 2rem;             /* relative spacing */
+    border-radius: 12px;
+    width: 60vw;               /* 70% of viewport width */
+    max-width: 80vw;           /* prevent overflow on very small screens */
+    max-height: 80vh;          /* still cap height relative to screen */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.progress-log {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 350px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 15px;
+    background: #f8f9fa;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    /* ✅ bigger size */
+    font-weight: bold;
+    /* ✅ bolder */
+    cursor: pointer;
+    color: #333;
+    /* ✅ darker for visibility */
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.close-button:hover {
+    color: #d9534f;
+    /* ✅ red on hover */
+    transform: scale(1.2);
+    /* ✅ slight zoom effect */
+}
+
+.progress-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 10px;
+    background: #e9ecef;
+    border-radius: 6px;
+    margin: 5px 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(45deg, #28a745, #20c997);
+    border-radius: 6px;
+    transition: width 0.5s ease;
+    width: 0%;
+    position: relative;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.3) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.progress-entry {
+    margin: 6px 0;
+    padding: 12px 1px 6px 10px;
+    border-left: 4px solid #6c757d;
+    background: white;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.status-running {
+    border-left-color: #007bff;
+    background: #e3f2fd;
+}
+
+.status-completed {
+    border-left-color: #28a745;
+    background: #e8f5e8;
+}
+
+.status-error {
+    border-left-color: #dc3545;
+    background: #fdeaea;
+}
+
+.progress-icon {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.progress-content {
+    flex: 1;
+}
+
+.progress-step {
+    font-weight: bold;
+    color: #495057;
+    margin-bottom: 3px;
+}
+
+.progress-message {
+    color: #6c757d;
+    margin-bottom: 3px;
+}
+
+.progress-time {
+    font-size: 11px;
+    color: #adb5bd;
+}
+
+.progress-percentage {
+    font-size: 16px;
+    font-weight: bold;
+    color: #28a745;
+    text-align: center;
+    margin: 6px 0;
+}
+
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
