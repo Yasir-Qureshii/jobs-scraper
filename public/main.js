@@ -7,7 +7,7 @@ const loginForm = document.getElementById("loginForm");
 const loginSection = document.getElementById("loginSection");
 const scraperSection = document.getElementById("scraperSection");
 const userStatus = document.getElementById("userStatus");
-const logoutBtn = document.getElementById("logoutBtn");
+// const logoutBtn = document.getElementById("logoutBtn");
 const errorMsg = document.getElementById("errorMsg");
 const submitBtn = document.getElementById("submitBtn");
 const submitText = document.getElementById("submitText");
@@ -264,14 +264,14 @@ function showScraper() {
     loginSection.classList.add("d-none");
     scraperSection.classList.remove("d-none");
     userStatus.innerText = `Demo User — Logged in`;
-    logoutBtn.classList.remove("d-none");
+    // logoutBtn.classList.remove("d-none");
 }
 
 function showLogin() {
     loginSection.classList.remove("d-none");
     scraperSection.classList.add("d-none");
     userStatus.innerText = "Not logged in";
-    logoutBtn.classList.add("d-none");
+    // logoutBtn.classList.add("d-none");
 }
 
 // Event listeners
@@ -306,28 +306,28 @@ loginForm.addEventListener("submit", async (e) => {
     }
 });
 
-logoutBtn.addEventListener("click", () => {
-    localStorage.removeItem("loggedInUser");
-    showLogin();
-});
+// logoutBtn.addEventListener("click", () => {
+//     localStorage.removeItem("loggedInUser");
+//     showLogin();
+// });
 
 // Cover letter toggle
-const coverCheckbox = document.getElementById("coverLetterCheckbox");
+// const coverCheckbox = document.getElementById("coverLetterCheckbox");
 const coverInput = document.getElementById("coverLetterDriveInput");
 const coverContainer = document.getElementById("coverLetterDriveContainer");
 const coverError = document.getElementById("coverLetterDriveError");
 
-coverCheckbox.addEventListener("change", () => {
-    if (coverCheckbox.checked) {
-        coverContainer.style.display = "block";
-        coverInput.setAttribute("required", "true");
-    } else {
-        coverContainer.style.display = "none";
-        coverInput.removeAttribute("required");
-        coverInput.value = "";
-        coverError.style.display = "none";
-    }
-});
+// coverCheckbox.addEventListener("change", () => {
+//     if (coverCheckbox.checked) {
+//         coverContainer.style.display = "block";
+//         coverInput.setAttribute("required", "true");
+//     } else {
+//         coverContainer.style.display = "none";
+//         coverInput.removeAttribute("required");
+//         coverInput.value = "";
+//         coverError.style.display = "none";
+//     }
+// });
 
 // Close progress modal
 closeProgress.addEventListener("click", () => {
@@ -348,13 +348,13 @@ scraperFormElement.addEventListener("submit", async (e) => {
     let hasError = false;
 
     // Validation
-    if (coverCheckbox.checked) {
-        const link = coverInput.value.trim();
-        if (!link.startsWith("https://drive.google.com/drive/folders/")) {
-            coverError.style.display = "block";
-            hasError = true;
-        } else coverError.style.display = "none";
-    }
+    // if (coverCheckbox.checked) {
+    //     const link = coverInput.value.trim();
+    //     if (!link.startsWith("https://drive.google.com/drive/folders/")) {
+    //         coverError.style.display = "block";
+    //         hasError = true;
+    //     } else coverError.style.display = "none";
+    // }
 
     const targetLink = targetSheetInput.value.trim();
     if (!targetLink.startsWith("https://docs.google.com/spreadsheets/d/")) {
@@ -375,7 +375,7 @@ scraperFormElement.addEventListener("submit", async (e) => {
         workType: [document.getElementById("workType").value].filter(Boolean),
         publishedAt: document.getElementById("publishedAt").value || "",
         targetScore: parseInt(document.getElementById("targetScore").value) || 85,
-        coverLetter: coverCheckbox.checked,
+        // coverLetter: coverCheckbox.checked,
         coverLetterDrive: coverInput.value.trim(),
         resumeSummary: document.getElementById("resumeSummary").value.trim(),
         preferences: document.getElementById("preferences").value.trim(),
