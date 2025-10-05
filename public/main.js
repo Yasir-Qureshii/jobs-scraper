@@ -253,10 +253,17 @@ function handleWorkflowError(data) {
 }
 
 // Login functionality
-function showScraper(email) {
+// function showScraper(email) {
+//     loginSection.classList.add("d-none");
+//     scraperSection.classList.remove("d-none");
+//     userStatus.innerText = `${email} — Logged in`;
+//     logoutBtn.classList.remove("d-none");
+// }
+
+function showScraper() {
     loginSection.classList.add("d-none");
     scraperSection.classList.remove("d-none");
-    userStatus.innerText = `${email} — Logged in`;
+    userStatus.innerText = `Demo User — Logged in`;
     logoutBtn.classList.remove("d-none");
 }
 
@@ -269,9 +276,10 @@ function showLogin() {
 
 // Event listeners
 document.addEventListener("DOMContentLoaded", () => {
-    const savedUser = localStorage.getItem("loggedInUser");
-    if (savedUser) showScraper(savedUser);
-    else showLogin();
+    // const savedUser = localStorage.getItem("loggedInUser");
+    // if (savedUser) showScraper(savedUser);
+    // else showLogin();
+    showScraper()
 });
 
 loginForm.addEventListener("submit", async (e) => {
@@ -375,7 +383,7 @@ scraperFormElement.addEventListener("submit", async (e) => {
     };
 
     // Show loader and progress modal
-    showLoader();
+    // showLoader();
     showProgressModal();
 
     // Set up progress monitoring (in real implementation, this would connect to your SSE endpoint)
