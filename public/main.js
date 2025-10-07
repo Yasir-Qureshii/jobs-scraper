@@ -391,7 +391,7 @@ scraperFormElement.addEventListener("submit", async (e) => {
 
     try {
         const response = await fetch(
-            "https://abbt989.app.n8n.cloud/webhook/37768662-1ef6-4aba-942b-d8ecc75ffbd5",
+            "https://buttarbab96.app.n8n.cloud/webhook/37768662-1ef6-4aba-942b-d8ecc75ffbd5",
             {
                 method: "POST",
                 headers: {
